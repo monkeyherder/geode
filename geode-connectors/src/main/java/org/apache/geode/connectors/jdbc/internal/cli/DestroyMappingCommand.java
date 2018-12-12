@@ -43,12 +43,14 @@ import org.apache.geode.management.internal.cli.result.model.ResultModel;
 import org.apache.geode.management.internal.security.ResourceOperation;
 import org.apache.geode.security.ResourcePermission;
 
+import static org.apache.geode.connectors.util.internal.MappingConstants.REGION_NAME;
+
 @Experimental
 public class DestroyMappingCommand extends SingleGfshCommand {
   static final String DESTROY_MAPPING = "destroy jdbc-mapping";
-  static final String DESTROY_MAPPING__HELP = EXPERIMENTAL + "Destroy the specified JDBC mapping.";
-  static final String DESTROY_MAPPING__REGION_NAME = "region";
-  static final String DESTROY_MAPPING__REGION_NAME__HELP =
+  private static final String DESTROY_MAPPING__HELP = EXPERIMENTAL + "Destroy the specified JDBC mapping.";
+  private static final String DESTROY_MAPPING__REGION_NAME = REGION_NAME;
+  private static final String DESTROY_MAPPING__REGION_NAME__HELP =
       "Name of the region whose JDBC mapping will be destroyed.";
 
   @CliCommand(value = DESTROY_MAPPING, help = DESTROY_MAPPING__HELP)
